@@ -6,7 +6,7 @@ export default function Contact() {
       <section className="text-gray-600 body-font relative">
       <div className="container px-5 py-10 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
-          <h1 className="sm:text-3xl text-4xl font-bold title-font mb-4 text-emerald-700">Contact Me</h1>
+          <h1 className="sm:text-3xl text-4xl font-bold title-font mb-4 bg-gradient-to-r from-cyan-500 to-violet-600 text-transparent bg-clip-text">Contact Me</h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Wish to collaborate with me or have any query then drop your message and your details here. Also you can connect with me on my social media handles mentioned above. Happy coding!</p>
         </div>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">

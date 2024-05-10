@@ -1,11 +1,18 @@
-[
+import pulse from './pulse.png'
+import abs from './abs.png'
+import adopt from './adopt.png'
+import news from './news.jpg'
+import exer from './exer.png'
+
+
+export const projectData=[
   {
     "id": 1,
     "category": "Web3",
     "title":"Pulse DApp",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "image": "./src/mypic.jpeg",
-    "link": "https://example.com/link1"
+    "image": pulse,
+    "link": "https://github.com/Bhargav0803/Pulse_DApp"
   },
 
   {
@@ -13,7 +20,7 @@
     "category": "Full Stack",
     "title":"Lean-To-Go",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "image": "https://example.com/image2.jpg",
+    "image": exer,
     "link": "https://example.com/link2"
   },
   {
@@ -21,7 +28,7 @@
     "category": "Full Stack",
     "title":"Adopt Me",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "image": "https://example.com/image3.jpg",
+    "image": adopt,
     "link": "https://example.com/link3"
   },
   {
@@ -29,7 +36,7 @@
     "category": "AI + Frontend",
     "title":"Abstricle",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "image": "https://example.com/image3.jpg",
+    "image": abs,
     "link": "https://example.com/link3"
   },
   {
@@ -37,7 +44,7 @@
     "category": "Flutter",
     "title":"India Health News",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "image": "https://example.com/image3.jpg",
+    "image": news,
     "link": "https://example.com/link3"
   }
 ]
