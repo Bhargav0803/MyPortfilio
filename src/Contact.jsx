@@ -1,6 +1,41 @@
 import React from 'react'
+import emailjs from '@emailjs/browser';
+import { useRef,useState } from 'react';
+import Modal from './Modal';
 
 export default function Contact() {
+
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_w8retpa', 'template_hheog2f', form.current, {
+        publicKey: 'OzfIDQcysmFmRsPMW',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert('Your message has been sent!')
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert('Somethinfg went wrong')
+        },
+      );
+  };
   return (
     <>
       <section className="text-gray-600 body-font relative">
@@ -9,6 +44,7 @@ export default function Contact() {
           <h1 className="sm:text-3xl text-4xl font-bold title-font mb-4 bg-gradient-to-r from-cyan-500 to-violet-600 text-transparent bg-clip-text">Contact Me</h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Wish to collaborate with me or have any query then drop your message and your details here. Also you can connect with me on my social media handles mentioned above. Happy coding!</p>
         </div>
+        <form ref={form} onSubmit={sendEmail}>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
           <div className="flex flex-wrap -m-2">
             <div className="p-2 w-1/2">
@@ -30,11 +66,21 @@ export default function Contact() {
               </div>
             </div>
             <div className="p-2 w-full">
+              
               <button className="flex mx-auto text-white bg-emerald-600 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-700 rounded text-lg">Button</button>
             </div>
-            
           </div>
         </div>
+        </form>
+        <button onClick={openModal} className="flex mx-auto text-white bg-emerald-600 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-700 rounded text-lg">Modal</button>
+              {isModalOpen && (
+                <Modal onClose={closeModal}>
+                  {/* Content of the modal */}
+                  <h2>Modal Content</h2>
+                  <p>This is the content of the modal.</p>
+                  <button onClick={closeModal}>Close Modal</button>
+                </Modal>
+              )}
       </div>
     </section>
     </>
