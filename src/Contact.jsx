@@ -1,20 +1,10 @@
 import React from 'react'
 import emailjs from '@emailjs/browser';
 import { useRef,useState } from 'react';
-import Modal from './Modal';
+
 
 export default function Contact() {
 
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
   
   const form = useRef();
 
@@ -72,15 +62,7 @@ export default function Contact() {
           </div>
         </div>
         </form>
-        <button onClick={openModal} className="flex mx-auto text-white bg-emerald-600 border-0 py-2 px-8 focus:outline-none hover:bg-emerald-700 rounded text-lg">Modal</button>
-              {isModalOpen && (
-                <Modal onClose={closeModal}>
-                  {/* Content of the modal */}
-                  <h2>Modal Content</h2>
-                  <p>This is the content of the modal.</p>
-                  <button onClick={closeModal}>Close Modal</button>
-                </Modal>
-              )}
+        
       </div>
     </section>
     </>
