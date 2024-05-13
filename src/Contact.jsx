@@ -1,9 +1,12 @@
 import React from 'react'
 import emailjs from '@emailjs/browser';
 import { useRef,useState } from 'react';
+import { useDarkMode } from './DarkModeContext';
+
 
 
 export default function Contact() {
+  const {darkMode} = useDarkMode();
 
   
   const form = useRef();
@@ -27,11 +30,11 @@ export default function Contact() {
       );
   };
   return (
-    <>
-      <section className="text-black body-font relative bg-light px-10">
+    <div className={darkMode ? 'dark' : ''}>
+      <section className="text-black body-font relative bg-light px-10 dark:bg-dark dark:text-gray-400">
       <div className=" container px-5 py-10 mx-auto">
         <div className='shadow-xl border-4 rounded-xl border-primary py-2'>
-        <h1 className="sm:text-3xl text-4xl text-center font-bold title-font mb-4 bg-primary text-transparent bg-clip-text">Contact Me</h1>
+        <h1 className="sm:text-3xl text-4xl text-center font-bold title-font mb-4 drop-shadow-lg bg-primary text-transparent bg-clip-text">Contact Me</h1>
         <div className=" flex flex-col text-center w-full mb-12">
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Wish to collaborate with me or have any query then drop your message and your details here. Also you can connect with me on my social media handles mentioned above. Happy coding!</p>
         </div>
@@ -41,24 +44,24 @@ export default function Contact() {
             <div className="p-2 w-1/2">
               <div className="relative">
                 <label htmlFor="name" className="leading-7 text-md font-semibold text-primary">Name</label>
-                <input type="text" id="name" name="name" className="w-full  bg-gray-100 bg-opacity-50 rounded border-2 border-primary  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                <input type="text" id="name" name="name" className="w-full  dark:bg-gray-400 bg-opacity-75 dark:text-white rounded border-2 border-primary  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
               </div>
             </div>
             <div className="p-2 w-1/2">
               <div className="relative">
                 <label htmlFor="email" className="leading-7 font-semibold text-md text-primary">Email</label>
-                <input type="email" id="email" name="email" className="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-primary  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
+                <input type="email" id="email" name="email" className="w-full dark:bg-gray-400 dark:text-white bg-opacity-75 rounded border-2 border-primary  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/>
               </div>
             </div>
             <div className="p-2 w-full">
               <div className="relative">
                 <label htmlFor="message" className="leading-7 font-semibold text-smd text-primary">Message</label>
-                <textarea id="message" name="message" className="w-full bg-white bg-opacity-50 rounded border-2 border-primary  h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                <textarea id="message" name="message" className="w-full dark:bg-gray-400 dark:text-white bg-opacity-75 rounded border-2 border-primary  h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
               </div>
             </div>
             <div className="p-2 w-full">
               
-              <button className="flex mx-auto text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-secondary rounded text-lg">Button</button>
+              <button className="flex mx-auto text-white bg-primary border-0 py-2 mb-4 px-8 focus:outline-none hover:bg-gray-400 rounded text-lg">Submit</button>
             </div>
           </div>
         </div>
@@ -66,6 +69,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
-    </>
+    </div>
   )
 }
