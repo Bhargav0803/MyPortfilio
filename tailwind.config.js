@@ -8,10 +8,13 @@ module.exports = {
     extend: {
       colors: {
         'primary': '#276880',
-        // 'secondary': 'gray-400',
+        'secondary': '',
         'light': 'F5F5F1',
         'dark': '#221F1F',
       },
+      fontFamily: {
+        body: ['Anton']
+      }
     },
   },
   plugins: [],
