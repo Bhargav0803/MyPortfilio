@@ -66,14 +66,15 @@ export default function Home({ detailsRef, contactRef }) {
                     <AiFillLinkedin />{" "}
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/bhargav-mungekar/"
+                    href="https://twitter.com/BhargavM_08"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <AiFillTwitterCircle />{" "}
                   </a>
+
                   <a
-                    href="https://twitter.com/BhargavM_08"
+                    href="https://github.com/Bhargav0803"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
